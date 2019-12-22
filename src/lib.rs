@@ -345,6 +345,8 @@ pub unsafe extern "Rust" fn default_pre_init() {}
 #[doc(hidden)]
 #[no_mangle]
 pub extern "Rust" fn default_mp_hook() -> bool {
+    true
+    /*
     use riscv::register::mhartid;
     match mhartid::read() {
         0 => true,
@@ -352,4 +354,5 @@ pub extern "Rust" fn default_mp_hook() -> bool {
             unsafe { riscv::asm::wfi() }
         },
     }
+    */
 }

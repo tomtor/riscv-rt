@@ -15,8 +15,8 @@ _start:
     .cfi_startproc
     .cfi_undefined ra
 
-    csrw mie, 0
-    csrw mip, 0
+    //csrw mie, 0
+    //csrw mip, 0
 
     li  x1, 0
     li  x2, 0
@@ -56,10 +56,10 @@ _start:
     .option pop
 
     // Check hart id
-    csrr a2, mhartid
-    lui t0, %hi(_max_hart_id)
-    add t0, t0, %lo(_max_hart_id)
-    bgtu a2, t0, abort
+    //csrr a2, mhartid
+    //lui t0, %hi(_max_hart_id)
+    //add t0, t0, %lo(_max_hart_id)
+    //bgtu a2, t0, abort
 
     // Allocate stacks
     la sp, _stack_start
@@ -72,8 +72,8 @@ _start:
     add s0, sp, zero
 
     // Set trap handler
-    la t0, _start_trap
-    csrw mtvec, t0
+    //la t0, _start_trap
+    //csrw mtvec, t0
 
     jal zero, _start_rust
 
