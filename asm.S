@@ -72,8 +72,9 @@ _start:
     add s0, sp, zero
 
     // Set trap handler
-    //la t0, _start_trap
+    la t0, _start_trap
     //csrw mtvec, t0
+    csrw stvec, t0
 
     jal zero, _start_rust
 
@@ -130,7 +131,6 @@ _start_trap:
 
     addi sp, sp, 16*REGBYTES
     mret
-
 
 /* Make sure there is an abort when linking */
 .section .init

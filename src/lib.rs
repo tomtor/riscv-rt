@@ -261,7 +261,7 @@ extern crate r0;
 
 pub use macros::{entry, pre_init};
 
-use riscv::register::mstatus;
+//use riscv::register::mstatus;
 
 #[export_name = "error: riscv-rt appears more than once in the dependency graph"]
 #[doc(hidden)]
@@ -329,7 +329,7 @@ pub extern "C" fn start_trap_rust() {
         trap_handler();
 
         // mstatus, remain in M-mode after mret
-        mstatus::set_mpp(mstatus::MPP::Machine);
+        // mstatus::set_mpp(mstatus::MPP::Machine);
     }
 }
 
