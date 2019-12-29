@@ -16,6 +16,7 @@ _start:
     .cfi_undefined ra
 
     //csrw mie, 0
+    csrw sie, 0
     //csrw mip, 0
 
     li  x1, 0
