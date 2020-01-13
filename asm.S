@@ -131,7 +131,8 @@ _start_trap:
     LOAD a7, 15*REGBYTES(sp)
 
     addi sp, sp, 16*REGBYTES
-    mret
+    //mret
+    sret
 
 /* Make sure there is an abort when linking */
 .section .init
